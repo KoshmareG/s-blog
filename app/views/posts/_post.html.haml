@@ -2,7 +2,7 @@
   .card-body
     .row
       .col
-        %h3= post.title
+        %h3= link_to post.title, post_path(post), class: 'text-decoration-none text-dark'
       - if current_page?(post_path(post))
         .col-auto
           .dropdown
