@@ -1,3 +1,20 @@
 ru:
+  activerecord:
+    attributes:
+      user:
+        username: 'Логин'
+      post:
+        title: 'Заголовок'
+        body: 'Пост'
+        picture: 'Изображение'
+  controllers:
+    posts:
+      created: 'Пост сохранен'
   global:
     s_blog: 'S-Blog'
+    save: 'Сохранить'
+  users:
+    registration: 'Регистрация'
+    sign_in: 'Вход'
+  posts:
+    new_post: 'Новый пост'
