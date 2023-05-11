@@ -10,11 +10,14 @@ ru:
   controllers:
     posts:
       created: 'Пост сохранен'
+      updated: 'Пост изменен'
   global:
     s_blog: 'S-Blog'
     save: 'Сохранить'
+    change: 'Редактировать'
   users:
     registration: 'Регистрация'
     sign_in: 'Вход'
   posts:
     new_post: 'Новый пост'
+    change_post: 'Редактировать пост'

@@ -1,6 +1,13 @@
 .card.border.border-0.shadow-sm.mb-3
   .card-body
-    %h3= post.title
+    .row
+      .col
+        %h3= post.title
+      .col-auto
+        .dropdown
+          %button.bi.bi-three-dots.fs-5.text-dark.button-trp{ type: 'button', data: { 'bs-toggle': 'dropdown' }, 'aria-expanded': 'false' }
+          %ul.dropdown-menu
+            %li.dropdown-item= link_to t('global.change'), edit_post_path(post), class: 'text-decoration-none text-dark'
     %p= simple_format h(post.body)
     - if post.picture.present?
       = image_tag url_for(post.picture.blob), class: 'img-fluid rounded'
