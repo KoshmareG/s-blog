@@ -1,0 +1,6 @@
+.card.border.border-0.shadow-sm.mb-3
+  .card-body
+    %h3= post.title
+    %p= simple_format h(post.body)
+    - if post.picture.present?
+      = image_tag url_for(post.picture.blob), class: 'img-fluid rounded'
