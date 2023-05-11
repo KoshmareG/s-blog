@@ -1,0 +1,8 @@
+.modal.fade{ id: "delete_post_#{post.id}", tabindex: '-1', 'aria-labelledby': "delete_modal_#{post.id}", 'aria-hidden': 'true' }
+  .modal-dialog
+    .modal-content
+      .modal-body
+        %p.mb-0= t('posts.are_you_sure')
+      .modal-footer.pt-1.pb-1
+        %button.btn.btn-secondary.btn-sm{ type: 'button', data: { 'bs-dismiss': 'modal' } }= t('global.cancel')
+        = button_to t('global.delete'), post_path(post), method: :delete, class: 'btn btn-danger btn-sm'

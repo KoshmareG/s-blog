@@ -34,6 +34,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+
+    redirect_to root_path, notice: I18n.t('controllers.posts.deleted')
+  end
+
   private
 
   def post_params

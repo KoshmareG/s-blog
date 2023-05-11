@@ -11,13 +11,17 @@ ru:
     posts:
       created: 'Пост сохранен'
       updated: 'Пост изменен'
+      deleted: 'Пост удален'
   global:
     s_blog: 'S-Blog'
     save: 'Сохранить'
     change: 'Редактировать'
+    delete: 'Удалить'
+    cancel: 'Отмена'
   users:
     registration: 'Регистрация'
     sign_in: 'Вход'
   posts:
     new_post: 'Новый пост'
     change_post: 'Редактировать пост'
+    are_you_sure: 'Вы точно хотите удалить пост?'
