@@ -1,20 +1,28 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
-  before_action :set_post, except: %i[index new create]
+  before_action :set_post, only: %i[edit update destroy]
+
+  after_action :verify_authorized, except: %i[index show]
+  after_action :verify_policy_scoped, only: %i[index show]
 
   def index
-    @posts = Post.includes(picture_attachment: :blob).all
+    @posts = policy_scope(Post).includes(picture_attachment: :blob).all
   end
 
   def show
+    @post = policy_scope(Post).find(params[:id])
   end
 
   def new
     @post = current_user.posts.build
+
+    authorize @post
   end
 
   def create
     @post = current_user.posts.build(post_params)
+
+    authorize @post
 
     if @post.save
       redirect_to post_path(@post), notice: I18n.t('controllers.posts.created')
@@ -24,9 +32,12 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authorize @post
   end
 
   def update
+    authorize @post
+
     if @post.update(post_params)
       redirect_to post_path(@post), notice: I18n.t('controllers.posts.updated')
     else
@@ -35,6 +46,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    authorize @post
+
     @post.destroy
 
     redirect_to root_path, notice: I18n.t('controllers.posts.deleted')
