@@ -22,6 +22,7 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 
 group :development, :test do
+  gem 'capybara'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
   gem 'shoulda-matchers', '~> 5.3'
