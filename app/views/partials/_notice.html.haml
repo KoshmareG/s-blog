@@ -1,0 +1,9 @@
+.row.justify-content-center
+  .col.col-md-6
+    .alert.alert-success.px-2.py-1.border.border-0
+      %div#notice{ data: { 'turbo-cache': 'false' }, role: 'alert' }
+        .row
+          .col
+            = flash[:notice]
+          .col-auto
+            %button.btn-close{ type: 'button', data: { 'bs-dismiss': 'alert' } }

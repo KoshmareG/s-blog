@@ -22,7 +22,9 @@ ru:
   users:
     registration: 'Регистрация'
     sign_in: 'Вход'
+    sign_out: 'Выйти'
   posts:
     new_post: 'Новый пост'
+    add_post: 'Добавить пост'
     change_post: 'Редактировать пост'
     are_you_sure: 'Вы точно хотите удалить пост?'

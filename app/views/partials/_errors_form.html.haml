@@ -1,0 +1,6 @@
+- if model.errors.any?
+  .row.justify-content-center
+    .col-auto
+      .alert.alert-danger.px-2.py-1.border.border-0.shadow-sm
+        - model.errors.each do |error|
+          .text-dark= error.full_message

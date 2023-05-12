@@ -9,5 +9,27 @@
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
     = javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true
 
-  %body
-    = yield
+  %body.text-bg-light
+    .bg-white.py-2.shadow-sm.mb-3
+      .container
+        .row.justify-content-center
+          .col.col-md-8
+            .row.align-items-end.gx-4
+              .col
+                %h3.mb-0= link_to t('global.s_blog'), root_path, class: 'text-decoration-none'
+              - if user_signed_in?
+                .col-auto
+                  = link_to t('posts.add_post'), new_post_path, class: 'btn btn-primary btn-sm'
+                .col-auto
+                  = button_to t('users.sign_out'), destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary btn-sm'
+              - else
+                .col-auto
+                  = link_to t('users.sign_in'), new_user_session_path, class: 'btn btn-primary btn-sm'
+    .container
+      .row.justify-content-center
+        .col.col-md-8
+          - if flash[:notice].present?
+            = render partial: 'partials/notice'
+          - if flash[:alert].present?
+            = render partial: 'partials/alert'
+          = yield
