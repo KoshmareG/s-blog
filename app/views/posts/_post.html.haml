@@ -13,6 +13,11 @@
                 %button.button-trp.p-0{ data: { 'bs-toggle': 'modal', 'bs-target': "#delete_post_#{post.id}" } }= t('global.delete')
     %h3= link_to post.title, post_path(post), class: 'text-decoration-none text-dark'
     %p= simple_format h(post.body)
+    .row{ id: "post_#{post.id}" }
+      .col-auto
+        = link_to post_path(post, anchor: 'comments'), class: 'text-decoration-none text-dark' do
+          %i.bi.bi-chat.text-dark.me-2
+          = post.comments.count
     - if post.picture.present?
       = image_tag url_for(post.picture.blob), class: 'img-fluid rounded'
 - if current_page?(post_path(post)) && user_can_edit?(post)

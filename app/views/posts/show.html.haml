@@ -3,4 +3,5 @@
   .card-body
     = render partial: 'partials/errors_form', locals: { model: @new_comment }
     = render partial: 'comments/form', locals: { post: @post, comment: @new_comment }
-= render @post.comments.except(@new_comment)
+#comments
+  = render @post.comments.except(@new_comment)
