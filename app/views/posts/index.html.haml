@@ -1,1 +1,3 @@
 = render @posts
+- if @posts.empty?
+  %p.text-center.fw-bold= t('posts.no_posts')
