@@ -1,0 +1,6 @@
+- if user_signed_in?
+  = form_with model: [post, comment] do |form|
+    = form.text_field :body, placeholder: t('comments.leave_comment'), class: 'form-control mb-2'
+    = form.submit t('comments.publish'), class: 'btn btn-primary btn-sm'
+- else
+  .text-center= "#{t('comments.for_comment_need')} #{link_to t('users.login').downcase, new_user_session_path} #{t('global.or').downcase} #{link_to t('users.register').downcase, new_user_registration_path}"

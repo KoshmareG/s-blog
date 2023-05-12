@@ -1,0 +1,8 @@
+.modal.fade{ id: "delete_comment_#{comment.id}", tabindex: '-1', 'aria-labelledby': "delete_modal_#{comment.id}", 'aria-hidden': 'true' }
+  .modal-dialog
+    .modal-content
+      .modal-body
+        %p.mb-0= t('comments.are_you_sure')
+      .modal-footer.pt-1.pb-1
+        %button.btn.btn-secondary.btn-sm{ type: 'button', data: { 'bs-dismiss': 'modal' } }= t('global.cancel')
+        = button_to t('global.delete'), post_comment_path(comment.post, comment), method: :delete, class: 'btn btn-danger btn-sm'

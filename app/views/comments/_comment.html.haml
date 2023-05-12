@@ -1,0 +1,11 @@
+.card.border.border-0.shadow-sm.mb-3{ id: "comment_#{comment.id}" }
+  .card-body
+    .row
+      .col
+        %p.fw-bold.text-body-secondary.mb-0= comment.user.username
+      - if user_can_edit?(comment)
+        .col-auto
+          %button.button-trp.bi.bi-trash3{ data: { 'bs-toggle': 'modal', 'bs-target': "#delete_comment_#{comment.id}" } }
+    = simple_format h(comment.body), class: 'mb-0'
+- if user_can_edit?(comment)
+  = render 'comments/delete_modal', comment: comment

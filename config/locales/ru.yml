@@ -7,6 +7,8 @@ ru:
         title: 'Заголовок'
         body: 'Пост'
         picture: 'Изображение'
+      comment:
+        body: 'Комментарий'
   controllers:
     posts:
       created: 'Пост сохранен'
@@ -18,14 +20,23 @@ ru:
     change: 'Редактировать'
     delete: 'Удалить'
     cancel: 'Отмена'
+    or: 'Или'
     not_authorized: 'У Вас нет доступа'
   users:
     registration: 'Регистрация'
     sign_in: 'Вход'
     sign_out: 'Выйти'
+    login: 'Войти'
+    register: 'Зарегистрироваться'
   posts:
     new_post: 'Новый пост'
     add_post: 'Добавить пост'
     change_post: 'Редактировать пост'
     are_you_sure: 'Вы точно хотите удалить пост?'
     no_posts: 'Постов пока нет'
+  comments:
+    publish: 'Опубликовать'
+    leave_comment: 'Оставить комментарий'
+    delete_comment: 'Удалить комментарий'
+    for_comment_need: 'Чтобы оставить комментарий, необходимо'
+    are_you_sure: 'Вы точно хотите удалить комментарий?'

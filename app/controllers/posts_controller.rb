@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def show
     @post = policy_scope(Post).find(params[:id])
+    @new_comment = @post.comments.build
   end
 
   def new
