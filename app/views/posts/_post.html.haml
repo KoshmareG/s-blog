@@ -2,15 +2,16 @@
   .card-body
     .row
       .col
-        %h3= link_to post.title, post_path(post), class: 'text-decoration-none text-dark'
+        %p.fw-bold.text-body-secondary.mb-0= post.user.username
       - if current_page?(post_path(post)) && user_can_edit?(post)
         .col-auto
           .dropdown
-            %button.bi.bi-three-dots.fs-5.text-dark.button-trp{ type: 'button', data: { 'bs-toggle': 'dropdown' }, 'aria-expanded': 'false' }
+            %button.bi.bi-three-dots.fs-5.text-dark.button-trp.lh-1{ type: 'button', data: { 'bs-toggle': 'dropdown' }, 'aria-expanded': 'false' }
             %ul.dropdown-menu.dropdown-menu-end
               %li.dropdown-item= link_to t('global.change'), edit_post_path(post), class: 'text-decoration-none text-dark'
               %li.dropdown-item
                 %button.button-trp.p-0{ data: { 'bs-toggle': 'modal', 'bs-target': "#delete_post_#{post.id}" } }= t('global.delete')
+    %h3= link_to post.title, post_path(post), class: 'text-decoration-none text-dark'
     %p= simple_format h(post.body)
     - if post.picture.present?
       = image_tag url_for(post.picture.blob), class: 'img-fluid rounded'
