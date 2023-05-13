@@ -1,0 +1,18 @@
+.row.justify-content-center
+  .col-12.col-md-8
+    %h3= t('users.sign_in')
+    .card.border.border-0.shadow-sm
+      .card-body
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          = f.label :email, class: 'form-label'
+          = f.email_field :email, autofocus: true, class: 'form-control mb-3'
+          = f.label :password, class: 'form-label'
+          = f.password_field :password, autocomplete: 'current-password', class: 'form-control mb-3'
+          - if devise_mapping.rememberable?
+            = f.label :remember_me, class: 'form-check-label'
+            = f.check_box :remember_me, class: 'form-check-input'
+          .d-grid.gap-2
+            = f.submit t('users.sign_in'), class: 'btn btn-primary mt-3'
+        .row.mt-3
+          .col.text-center
+            = link_to t('users.registration'), new_user_registration_path, class: 'text-decoration-none'

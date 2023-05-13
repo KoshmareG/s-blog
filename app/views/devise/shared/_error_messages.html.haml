@@ -1,0 +1,5 @@
+- if resource.errors.any?
+  .alert.alert-danger.px-2.py-1.border.border-0
+    %div#error_explanation{ data: { 'turbo-cache': 'false' } }
+      - resource.errors.full_messages.each do |message|
+        %p.mb-0= message

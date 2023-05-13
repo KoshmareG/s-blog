@@ -35,6 +35,10 @@ ru:
     sign_out: 'Выйти'
     login: 'Войти'
     register: 'Зарегистрироваться'
+    edit_password: 'Изменить пароль'
+    change: 'Изменить'
+    delete_account: 'Удалить аккаунт'
+    are_you_sure: 'Вы действительно хотите удалить аккаунт?'
   posts:
     new_post: 'Новый пост'
     add_post: 'Добавить пост'
