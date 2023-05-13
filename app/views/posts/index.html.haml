@@ -1,3 +1,4 @@
 = render @posts
+= paginate @posts, theme: 'bootstrap-5', except_elements: %i[prev_page next_page last_page]
 - if @posts.empty?
   %p.text-center.fw-bold= t('posts.no_posts')

@@ -14,6 +14,13 @@ ru:
       created: 'Пост сохранен'
       updated: 'Пост изменен'
       deleted: 'Пост удален'
+  views:
+    pagination:
+      first: 'Первая'
+      last: 'Последняя'
+      previous: 'Предыдущая'
+      next: 'Следующая'
+      truncate: '&hellip;'
   global:
     s_blog: 'S-Blog'
     save: 'Сохранить'
