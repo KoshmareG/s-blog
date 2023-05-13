@@ -2,7 +2,7 @@
   .card-body
     .row
       .col
-        %p.fw-bold.text-body-secondary.mb-0= post.user.username
+        %p.fw-bold.text-body-secondary.mb-0= post.user.username.truncate(30)
       - if current_page?(post_path(post)) && user_can_edit?(post)
         .col-auto
           .dropdown
