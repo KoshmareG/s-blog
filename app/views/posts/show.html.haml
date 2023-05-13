@@ -4,4 +4,6 @@
     = render partial: 'partials/errors_form', locals: { model: @new_comment }
     = render partial: 'comments/form', locals: { post: @post, comment: @new_comment }
 #comments
+- if @post.comments.except(@new_comment).any?
+  %h4= t('comments.comments')
   = render @post.comments.except(@new_comment)
