@@ -1,3 +1,9 @@
+- if user_signed_in?
+  %ul.nav.nav-pills.mb-3
+    %li.nav-item
+      = link_to t('posts.all'), posts_path, class: "nav-link#{' active' unless params[:filter].present?}"
+    %li.nav-item
+      = link_to t('posts.user_posts'), posts_path(filter: 'user_posts'), class: "nav-link#{' active' if params[:filter] == 'user_posts'}"
 = render @posts
 = paginate @posts, theme: 'bootstrap-5', except_elements: %i[prev_page next_page last_page]
 - if @posts.empty?

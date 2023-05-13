@@ -6,7 +6,9 @@ class PostsController < ApplicationController
   after_action :verify_policy_scoped, only: %i[index show]
 
   def index
-    @posts = policy_scope(Post).includes(:user, picture_attachment: :blob).all.page(params[:page])
+    post_filter = params[:filter] == 'user_posts' ? current_user.posts : Post
+
+    @posts = policy_scope(post_filter).includes(:user, picture_attachment: :blob).page(params[:page])
   end
 
   def show

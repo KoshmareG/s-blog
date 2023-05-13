@@ -41,6 +41,8 @@ ru:
     change_post: 'Редактировать пост'
     are_you_sure: 'Вы точно хотите удалить пост?'
     no_posts: 'Постов пока нет'
+    all: 'Все'
+    user_posts: 'Мои посты'
   comments:
     publish: 'Опубликовать'
     leave_comment: 'Оставить комментарий'
