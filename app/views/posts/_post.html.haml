@@ -11,7 +11,7 @@
               %li.dropdown-item= link_to t('global.change'), edit_post_path(post), class: 'text-decoration-none text-dark'
               %li.dropdown-item
                 %button.button-trp.p-0{ data: { 'bs-toggle': 'modal', 'bs-target': "#delete_post_#{post.id}" } }= t('global.delete')
-    %h3= link_to post.title, post_path(post), class: 'text-decoration-none text-dark'
+    %h4= link_to post.title, post_path(post), class: 'text-decoration-none text-dark'
     %p= simple_format h(post.body)
     - if post.picture.present?
       = image_tag url_for(post.picture.blob), class: 'img-fluid rounded mb-2'
