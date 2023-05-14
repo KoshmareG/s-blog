@@ -3,12 +3,31 @@ ru:
     attributes:
       user:
         username: 'Логин'
+        created_at: 'Создан'
+        updated_at: 'Обновлен'
       post:
         title: 'Заголовок'
         body: 'Пост'
         picture: 'Изображение'
+        user: 'Пользователь'
+        created_at: 'Создан'
+        updated_at: 'Обновлен'
       comment:
         body: 'Комментарий'
+        user: 'Пользователь'
+        created_at: 'Создан'
+        updated_at: 'Обновлен'
+      admin_user:
+        created_at: 'Создан'
+        updated_at: 'Обновлен'
+        current_sign_in_at: 'Заходил'
+        sign_in_count: 'Количество входов'
+    models:
+      post: 'Пост'
+      user: 'Пользователь'
+      comment: 'Комментарий'
+      admin_user: 'Администратор'
+      admin: 'Администратор'
   controllers:
     posts:
       created: 'Пост сохранен'
@@ -39,6 +58,7 @@ ru:
     change: 'Изменить'
     delete_account: 'Удалить аккаунт'
     are_you_sure: 'Вы действительно хотите удалить аккаунт?'
+    admins: 'Администраторы'
   posts:
     new_post: 'Новый пост'
     add_post: 'Добавить пост'
@@ -47,6 +67,7 @@ ru:
     no_posts: 'Постов пока нет'
     all: 'Все'
     user_posts: 'Мои посты'
+    posts: 'Посты'
   comments:
     publish: 'Опубликовать'
     leave_comment: 'Оставить комментарий'
