@@ -1,4 +1,6 @@
 ActiveAdmin.register AdminUser do
+  menu priority: 1
+
   permit_params :email, :password, :password_confirmation
 
   index do
@@ -11,10 +13,13 @@ ActiveAdmin.register AdminUser do
     actions
   end
 
-  filter :email
-  filter :current_sign_in_at
-  filter :sign_in_count
-  filter :created_at
+  show do
+    attributes_table do
+      row :email
+      row :created_at
+      row :updated_at
+    end
+  end
 
   form do |f|
     f.inputs do
@@ -24,4 +29,9 @@ ActiveAdmin.register AdminUser do
     end
     f.actions
   end
+
+  filter :email
+  filter :current_sign_in_at
+  filter :sign_in_count
+  filter :created_at
 end
