@@ -3,12 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+gem 'activeadmin'
 gem 'active_storage_validations'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'haml'
+gem 'image_processing', '>= 1.2'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'kaminari'
