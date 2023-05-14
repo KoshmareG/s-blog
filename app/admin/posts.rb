@@ -1,4 +1,8 @@
 ActiveAdmin.register Post do
+  menu priority: 3
+
+  config.per_page = 10
+
   permit_params :title, :body, :picture
 
   index do

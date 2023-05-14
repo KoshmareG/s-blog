@@ -1,4 +1,8 @@
 ActiveAdmin.register User do
+  menu priority: 2
+
+  config.per_page = 30
+
   permit_params :email, :username, :password, :password_confirmation
 
   index do
