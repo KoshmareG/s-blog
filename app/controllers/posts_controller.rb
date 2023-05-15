@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   after_action :verify_policy_scoped, only: %i[index show]
 
   def index
+    params.delete(:filter) unless user_signed_in?
+
     post_filter = params[:filter] == 'user_posts' ? current_user.posts : Post
 
     @posts = policy_scope(post_filter).includes(:user, picture_attachment: :blob).page(params[:page])
