@@ -1,5 +1,6 @@
 ActiveAdmin.register Post do
   menu priority: 3
+  actions :all, except: :new
 
   config.per_page = 10
 
