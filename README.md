@@ -25,6 +25,7 @@ At the first start, you need to create a database and run migrations. Open an ad
 ```
 $ docker compose exec web rails db:create
 $ docker compose exec web rails db:migrate
+$ docker compose exec web rails db:seed
 ```
 
 Then build css and js
