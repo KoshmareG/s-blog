@@ -30,6 +30,8 @@ ru:
       admin: 'Администратор'
   formtastic:
     update: "Обновить %{model}"
+    create: "Создать %{model}"
+    destroy: "Удалить %{model}"
   controllers:
     posts:
       created: 'Пост сохранен'
