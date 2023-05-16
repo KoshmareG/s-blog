@@ -28,6 +28,8 @@ ru:
       comment: 'Комментарий'
       admin_user: 'Администратор'
       admin: 'Администратор'
+  formtastic:
+    update: "Обновить %{model}"
   controllers:
     posts:
       created: 'Пост сохранен'
